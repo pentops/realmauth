@@ -10,7 +10,7 @@ generate:
     output: .
     opts:
       paths: import
-      module: github.com/pentops/o5-auth
+      module: github.com/pentops/realmauth
     plugins:
       - base: go
       - base: go-sugar

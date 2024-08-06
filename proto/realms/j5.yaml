@@ -3,7 +3,7 @@ registry:
   name: realms
 
 packages:
-  - name: o5.realms.v1
+  - name: o5.realm.v1
 
 options:
   subPackages: []
@@ -12,9 +12,15 @@ dependencies:
   - bufRegistry:
       owner: bufbuild
       name: protovalidate
+
+  - bufRegistry:
+      owner: googleapis
+      name: googleapis
+
   - registry:
       owner: pentops
       name: j5
+
   - registry:
       owner: pentops
       name: protostate

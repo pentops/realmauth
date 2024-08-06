@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package o5.realm.v1.service;
+
+import "buf/validate/validate.proto";
+import "google/api/annotations.proto";
+import "j5/auth/v1/actor.proto";
+import "o5/realm/v1/realm.proto";
+import "o5/realm/v1/tenant.proto";
+
+option go_package = "github.com/pentops/realmauth/gen/o5/realm/v1/realm_o5spb";
+
+service AuthService {
+  rpc Whoami(WhoamiRequest) returns (WhoamiResponse) {
+    option (google.api.http) = {get: "/o5-auth/v1/whoami"};
+  }
+}
+
+message WhoamiRequest {}
+
+message WhoamiResponse {
+  j5.auth.v1.Actor actor = 1;
+
+  repeated JoinedRealmAccess realms = 5;
+
+  message JoinedRealmAccess {
+    o5.realm.v1.RealmState realm = 1 [(buf.validate.field).required = true];
+    o5.realm.v1.TenantState tenant = 2 [(buf.validate.field).required = true];
+  }
+}
