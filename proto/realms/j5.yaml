@@ -6,7 +6,8 @@ packages:
   - name: o5.realm.v1
 
 options:
-  subPackages: []
+  subPackages:
+  - name: "service"
 
 dependencies:
   - bufRegistry:
