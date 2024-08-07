@@ -1,7 +1,9 @@
 inputs:
     - name: buf/bufbuild/protovalidate
       version: a6c49f84cc0f4e038680d390392e2ab0
-    - name: registry/v1/pentops/j5
-      version: main
-    - name: registry/v1/pentops/protostate
-      version: main
+    - name: buf/googleapis/googleapis
+      version: 8bc2c51e08c447cd8886cdea48a73e14
+    - name: registry/pentops/j5
+      version: 62e50e1a6cd085c08b962253a9b5e29e01eaf648
+    - name: registry/pentops/protostate
+      version: f9d94701a591ff378c75106a893f7f235f27ffdd
