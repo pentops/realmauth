@@ -18,7 +18,10 @@ message TenantKeys {
 
   string realm_id = 2 [(buf.validate.field).string.uuid = true];
 
-  string tenant_type = 3 [(buf.validate.field).string.pattern = "^[a-z0-9_]+$"];
+  string tenant_type = 3 [
+    (buf.validate.field).string.pattern = "^[a-z0-9-]+$",
+    (j5.ext.v1.key) = {} /* mark it as a natural key */
+  ];
 }
 
 message TenantStateData {

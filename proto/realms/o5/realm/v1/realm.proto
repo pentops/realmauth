@@ -43,7 +43,7 @@ message RealmSpec {
   string name = 1;
 
   // predefined 'well-known' realm types specified at the application level.
-  string type = 2 [(buf.validate.field).string.pattern = "^[a-z0-9_]+$"];
+  string type = 2 [(buf.validate.field).string.pattern = "^[a-z0-9-]+$"];
 
   // API URL for API Access to the realm
   string base_url = 3;
@@ -56,7 +56,7 @@ message RealmSpec {
 }
 
 message TenantType {
-  string name = 1 [(buf.validate.field).string.pattern = "^[a-z0-9_]+$"];
+  string name = 1 [(buf.validate.field).string.pattern = "^[a-z0-9-]+$"];
   string label = 2;
 
   // the tenant-type has exactly one tenant ID in the realm.

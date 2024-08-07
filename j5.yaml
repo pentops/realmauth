@@ -16,6 +16,7 @@ generate:
       - base: go-sugar
       - base: go-grpc
       - base: go-messaging
+      - base: go-psm
 
 plugins:
   - name: go
@@ -37,3 +38,8 @@ plugins:
     type: PLUGIN_PROTO
     docker:
       image: ghcr.io/pentops/protoc-gen-go-messaging:9f9694311c7c2ad1d88dd6d0d3d5ece61f3c3e2c
+
+  - name: go-psm
+    base: go
+    docker:
+      image: ghcr.io/pentops/protoc-gen-go-protostate:ae6136939c65383334732b028a96d5f8802016fa
